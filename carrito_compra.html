@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Tienda de Videojuegos Retro</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Carrito de Compras</h1>
+            <div class="header-icons">
+                <a href="inicio_sesion.html"><img src="contacto.png" alt="Usuario" class="icon"></a>
+                <a href="carrito_compra.html"><img src="carrito-de-compras.png" alt="Carrito" class="icon"></a>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">
+                <img src="fogata logo.jpeg" alt="Inicio" class="nav-icon"> Inicio
+            </a>
+            <a href="nintendo.html" class="nav-link">
+                <img src="logo nintendo.jpeg" alt="Nintendo" class="nav-icon"> Nintendo
+            </a>
+            <a href="playstation.html" class="nav-link">
+                <img src="playstation logo.jpeg" alt="PlayStation" class="nav-icon"> Playstation
+            </a>
+            <a href="xbox.html" class="nav-link">
+                <img src="xbox logo.jpeg" alt="Xbox" class="nav-icon"> Xbox
+            </a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section id="carrito">
+            <h2>Tu Carrito de Compras</h2>
+            <table class="carrito-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="nes-icon.png" alt="NES Icono" class="producto-icon"> Paquete NES</td>
+                        <td>$214.00</td>
+                        <td>
+                            <input type="number" value="1" min="1" class="cantidad-input" aria-label="Cantidad Paquete NES">
+                        </td>
+                        <td>$214.00</td>
+                        <td>
+                            <button class="button eliminar" onclick="alert('Producto eliminado del carrito')" aria-label="Eliminar Paquete NES">
+                                <img src="borrar.png" alt="Eliminar" class="accion-icon">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="gba-icon.png" alt="GBA Icono" class="producto-icon"> Gameboy Advance</td>
+                        <td>$150.00</td>
+                        <td>
+                            <input type="number" value="1" min="1" class="cantidad-input" aria-label="Cantidad Gameboy Advance">
+                        </td>
+                        <td>$150.00</td>
+                        <td>
+                            <button class="button eliminar" onclick="alert('Producto eliminado del carrito')" aria-label="Eliminar Gameboy Advance">
+                                <img src="borrar.png" alt="Eliminar" class="accion-icon">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="total-container">
+                <h3>Total: <span class="total-precio">$364.00</span></h3>
+                <button class="button checkout" onclick="alert('Procediendo al pago')" aria-label="Proceder al Pago">
+                    <img src="tarjeta-de-credito.png" alt="Checkout" class="accion-icon"> Proceder al Pago
+                </button>
+            </div>
+        </section>
+    </div>
+    
+
+    <footer>
+        <p>&copy; 2024 Tienda de Videojuegos Retro. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Política de Privacidad</a> | 
+            <a href="#">Términos y Condiciones</a> | 
+            <a href="#">Contacto</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        </div>
+    </footer>
+</body>
+</html>
