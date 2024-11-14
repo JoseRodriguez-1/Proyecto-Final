@@ -680,4 +680,118 @@ h2 {
     text-align: center;
 }
 
+/* Tabla del carrito de compras */
+#cart-summary {
+    margin-top: 40px;
+    padding: 20px;
+    background: linear-gradient(45deg, #0d0d40, #1f1f7a);
+    color: #f0f0c9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
 
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#cart-table th, #cart-table td {
+    border: 2px solid #ff8000;
+    padding: 15px;
+    text-align: center;
+    color: #f0f0c9;
+    vertical-align: middle;
+}
+
+#cart-table th {
+    background-color: #ff8000;
+    color: #0d0d40;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#cart-table td {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.product-container {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.product-name {
+    color: #ffcc00;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.remove-button {
+    color: white;
+    background-color: #ff4d4d;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+    background-color: #cc0000;
+}
+
+.total-container {
+    margin-top: 20px;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.total-container h3 {
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 1.5rem;
+}
+
+.total-precio {
+    color: #00ffcc;
+    font-weight: bold;
+}
+
+.button.checkout {
+    background: linear-gradient(45deg, #00ffcc, #ff0080);
+    color: #0d0d40;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    border-radius: 30px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button.checkout:hover {
+    background: linear-gradient(45deg, #ff0080, #00ffcc);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
