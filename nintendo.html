@@ -4,34 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Videojuegos Retro - Nintendo</title>
-    <link rel="stylesheet" href="estilo.css">
-    <script src="funciones.js" ></script>
+    <link rel="stylesheet" href="estilo1.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="funciones.js" defer></script> <!-- Asegúrate de incluir 'defer' para cargar el script después del HTML -->
 </head>
 <body>
     <header>
         <div class="header-container">
-            <h1>Catálogo de Nintendo </h1>
-            <div class="header-icons">
-                <a href="inicio_sesion.html"><img src="contacto.png" alt="Usuario" class="icon"></a>
-                <a href="carrito_compra.html"><img src="carrito-de-compras.png" alt="Carrito" class="icon"></a>
+            <h1>Catálogo de Nintendo</h1>
+            <div class="header-icons">  
+                <a href="inicio_sesion.html"><img src="img/extra/contacto.png" alt="Usuario" class="icon"></a>
+                <a href="carrito_compra.html"><img src="img/extra/carrito-de-compras.png" alt="Carrito" class="icon">
+                    <span id="cart-counter" class="cart-counter">0</span>
+                </a>
             </div>
         </div>
     </header>
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="nav-link">
-                <img src="fogata logo.jpeg" alt="Inicio" class="nav-icon"> Inicio
-            </a>
-            <a href="nintendo.html" class="nav-link">
-                <img src="logo nintendo.jpeg" alt="Nintendo" class="nav-icon"> Nintendo
-            </a>
-            <a href="playstation.html" class="nav-link">
-                <img src="playstation logo.jpeg" alt="PlayStation" class="nav-icon"> Playstation
-            </a>
-            <a href="xbox.html" class="nav-link">
-                <img src="xbox logo.jpeg" alt="Xbox" class="nav-icon"> Xbox
-            </a>
+            <div class="nav-links-container">
+                <a href="index.html" class="nav-link">
+                    <img src="img/extra/fogata logo.jpeg" alt="Inicio" class="nav-icon"> Inicio
+                </a>
+                <a href="nintendo.html" class="nav-link">
+                    <img src="img/extra/logo nintendo.jpeg" alt="Nintendo" class="nav-icon"> Nintendo
+                </a>
+                <a href="playstation.html" class="nav-link">
+                    <img src="img/extra/playstation logo.jpeg" alt="PlayStation" class="nav-icon"> Playstation
+                </a>
+                <a href="xbox.html" class="nav-link">
+                    <img src="img/extra/xbox logo.jpeg" alt="Xbox" class="nav-icon"> Xbox
+                </a>
+            </div>
         </div>
     </nav>
     
@@ -44,32 +48,63 @@
             <div class="carousel-container" id="carousel-consolas">
                 <div class="carousel-slide" data-current-index="0">
                     <div class="carousel-item">
-                        <img src="nintendo64 1.jpeg" alt="Nintendo 64" style="width:200px;height:250px;">
+                        <img src="img/pr/nintendo64 1.jpeg" alt="Nintendo 64" style="width:200px;height:250px;" class="producto-img">
                         <h3>Nintendo 64</h3>
                         <p>Precio: $120.00</p>
-                        <button class="button" onclick="addToCart('Nintendo 64')">⭐ Añadir al Carrito</button>
+                        <button class="button" onclick="addToCart('Nintendo 64', 120, '/img/pr/nintendo64 1.jpeg')">⭐ Añadir al Carrito</button>
                     </div>
                     <div class="carousel-item">
-                        <img src="gamecube2.jpeg" alt="GameCube" style="width:200px;height:250px;">
+                        <img src="img/pr/gamecube2.jpeg" alt="GameCube" style="width:200px;height:250px;" class="producto-img">
                         <h3>GameCube</h3>
                         <p>Precio: $90.00</p>
-                        <button class="button add-to-cart" onclick="alert('GameCube añadido al carrito')">⭐ Añadir al Carrito</button>
+                        <button class="button" onclick="addToCart('GameCube', 90, '/img/pr/gamecube2.jpeg')">⭐ Añadir al Carrito</button>
                     </div>
                     <div class="carousel-item">
-                        <img src="wii1.jpeg" alt="Nintendo Wii" style="width:200px;height:250px;">
+                        <img src="img/pr/wii1.jpeg" alt="Nintendo Wii" style="width:200px;height:250px;" class="producto-img">
                         <h3>Nintendo Wii</h3>
                         <p>Precio: $80.00</p>
-                        <button class="button add-to-cart" onclick="alert('Nintendo Wii añadido al carrito')">⭐ Añadir al Carrito</button>
+                        <button class="button" onclick="addToCart('Nintendo Wii', 80, '/img/pr/wii1.jpeg')">⭐ Añadir al Carrito</button>
                     </div>
                     <div class="carousel-item">
-                        <img src="gameboy1.jpeg" alt="Gameboy" style="width:200px;height:250px;">
+                        <img src="img/pr/gameboy1.jpeg" alt="Gameboy" style="width:200px;height:250px;" class="producto-img">
                         <h3>Gameboy</h3>
                         <p>Precio: $90.00</p>
-                        <button class="button add-to-cart" onclick="alert('GameBoy añadida al carrito')">⭐ Añadir al Carrito</button>
+                        <button class="button" onclick="addToCart('GameBoy', 90, '/img/pr/gameboy1.jpeg')">⭐ Añadir al Carrito</button>
                     </div>
+                    <div class="carousel-item">
+                        <img src="img/pr/gameboyc.jpeg" alt="Gameboy Color" style="width:200px;height:250px;" class="producto-img">
+                        <h3>Gameboy Color</h3>
+                        <p>Precio: $90.00</p>
+                        <button class="button" onclick="addToCart('GameBoy Color', 90, '/img/pr/gameboyc.jpeg')">⭐ Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/pr/ds1.jpeg" alt="Nintendo DS" style="width:200px;height:250px;" class="producto-img">
+                        <h3>Nintendo DS</h3>
+                        <p>Precio: $90.00</p>
+                        <button class="button" onclick="addToCart('Nintendo DS', 90, '/img/pr/ds1.jpeg')">⭐ Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/pr/nintendo 3ds zelda.jpg" alt="Nintendo 3DS Zelda" style="width:200px;height:250px;" class="producto-img">
+                        <h3>Nintendo 3DS Zelda Edition</h3>
+                        <p>Precio: $120.00</p>
+                        <button class="button" onclick="addToCart('Nintendo 3DS Zelda Edition',120, '/img/pr/nintendo 3ds zelda.jpg')">⭐ Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/pr/pack.nes.jpg" alt="Paquete NES" style="width:200px;height:250px;" class="producto-img">
+                        <h3>Paquete NES</h3>
+                        <p>Precio: $214.00</p>
+                        <button class="button" onclick="addToCart('Paquete NES',214, '/img/pr/pack.nes.jpg')">⭐ Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/pr/gameboy advance.jpeg" alt="Gameboy Advance" style="width:200px;height:250px;" class="producto-img">
+                        <h3>Paquete NES</h3>
+                        <p>Precio: $180.00</p>
+                        <button class="button" onclick="addToCart('Gameboy Advance',180, '/img/pr/gameboy advance.jpeg')">⭐ Añadir al Carrito</button>
+                    </div>
+
                 </div>
-                <button class="prev" aria-label="Slide Anterior">⬅️</button>
-                <button class="next" aria-label="Slide Siguiente">➡️</button>
+                <button class="prev" onclick="moveSlide('carousel-consolas', -1)">⬅️</button>
+                <button class="next" onclick="moveSlide('carousel-consolas', 1)">➡️</button>
             </div>
 
             <!-- Carrusel de Juegos -->
@@ -77,29 +112,71 @@
             <div class="carousel-container" id="carousel-juegos">
                 <div class="carousel-slide" data-current-index="0">
                     <div class="carousel-item">
-                        <img src="mario galaxy.jpg" alt="Super Mario Galaxy" style="width:200px;height:250px;">
+                        <img src="img/pr/mario galaxy.jpg" alt="Super Mario Galaxy" style="width:200px;height:250px;" class="producto-img">
                         <h3>Super Mario Galaxy</h3>
                         <p>Precio: $30.00</p>
-                        <button class="button" onclick="alert('Super Mario Galaxy añadido al carrito')">⭐ Añadir al Carrito</button>
+                        <button class="button" onclick="addToCart('Super Mario Galaxy', 30, '/img/pr/mario galaxy.jpg')">⭐ Añadir al Carrito</button>
+                    </div>  
+                    <div class="carousel-item">
+                        <img src="img/pr/pokemon rojo.jpeg" alt="Pokemon Rojo" style="width:200px;height:250px;">
+                        <h3>Pokemon Rojo</h3>
+                        <p>Precio: $50.00</p>
+                        <button class="button" onclick="addToCart('Pokemon Rojo', 50, '/img/pr/pokemon rojo.jpeg')">⭐ Añadir al Carrito</button>
                     </div>
                     <div class="carousel-item">
-                        <img src="pokemon rojo.jpeg" alt="Pokemon Rojo" style="width:200px;height:250px;">
-                        <h3>GameBoy</h3>
-                        <p>Precio: $50.00</p>
-                        <button class="button" onclick="addToCart('Pokemon Rojo')">⭐ Añadir al Carrito</button>
+                        <img src="img/pr/ocarina of time.jpeg" alt="Zelda Ocarina" style="width:200px;height:250px;">
+                        <h3>Zelda Ocarina Of Time</h3>
+                        <p>Precio: $60.00</p>
+                        <button class="button" onclick="addToCart('Zelda Ocarina', 60, '/img/pr/ocarina of time.jpeg')">⭐ Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/pr/metroid prime.jpeg" alt="Metroid Prime" style="width:200px;height:250px;">
+                        <h3>Metroid Prime</h3>
+                        <p>Precio: $40.00</p>
+                        <button class="button" onclick="addToCart('Metroid Prime', 40, '/img/pr/metroid prime.jpeg')">⭐ Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/pr/powerg.jpeg" alt="Power Girls" style="width:200px;height:250px;">
+                        <h3>Power Girls</h3>
+                        <p>Precio: $20.00</p>
+                        <button class="button" onclick="addToCart('Power Girls', 20, '/img/pr/power.jpeg')">⭐ Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/pr/supermds.jpeg" alt="Super Mario Bros" style="width:200px;height:250px;">
+                        <h3>Super Mario Bros</h3>
+                        <p>Precio: $70.00</p>
+                        <button class="button" onclick="addToCart('Super Mario Bros', 70, '/img/pr/supermds.jpeg')">⭐ Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/pr/pokemonblack.jpeg" alt="Pokemon Black" style="width:200px;height:250px;">
+                        <h3>Pokemon Black</h3>
+                        <p>Precio: $60.00</p>
+                        <button class="button" onclick="addToCart('Pokemon Black', 60, '/img/pr/pokemonblack.jpeg')">⭐ Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/pr/mariokartsuper.jpeg" alt="Mario Kart Super" style="width:200px;height:250px;">
+                        <h3>Mario Kart Super</h3>
+                        <p>Precio: $80.00</p>
+                        <button class="button" onclick="addToCart('Mario Kart Super', 80, '/img/pr/mariokartsuper.jpeg')">⭐ Añadir al Carrito</button>
                     </div>
                 </div>
-                <button class="prev" aria-label="Slide Anterior">⬅️</button>
-                <button class="next" aria-label="Slide Siguiente">➡️</button>
+                <button class="prev" onclick="moveSlide('carousel-juegos', -1)">⬅️</button>
+                <button class="next" onclick="moveSlide('carousel-juegos', 1)">➡️</button>
             </div>
         </section>
     </div>
     <footer>
         <p>&copy; 2024 Tienda de Videojuegos Retro. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Política de Privacidad</a> | 
+            <a href="#">Términos y Condiciones</a> | 
+            <a href="#">Contacto</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><img src="img/extra/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="img/extra/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="img/extra/instagram.png" alt="Instagram"></a>
+        </div> 
     </footer>
-    
-    <script src="funciones.js">
-
-    </script>
 </body>
 </html>
