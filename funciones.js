@@ -1,33 +1,22 @@
-        function moveSlide(carouselId, direction) {
-            const slide = document.querySelector(`#${carouselId} .carousel-slide`);
-            const items = slide.querySelectorAll('.carousel-item');
-            const totalItems = items.length;
-            let currentIndex = parseInt(slide.getAttribute('data-current-index')) || 0;
+// Función para mover el carrusel
+function moveSlide(carouselId, direction) {
+    const slide = document.querySelector(`#${carouselId} .carousel-slide`);
+    const items = slide.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    let currentIndex = parseInt(slide.getAttribute('data-current-index')) || 0;
 
-            currentIndex += direction;
+    currentIndex += direction;
 
-            if (currentIndex < 0) {
-                currentIndex = totalItems - 1;
-            } else if (currentIndex >= totalItems) {
-                currentIndex = 0;
-            }
+    if (currentIndex < 0) {
+        currentIndex = totalItems - 1;
+    } else if (currentIndex >= totalItems) {
+        currentIndex = 0;
+    }
 
-            slide.style.transform = `translateX(${-currentIndex * 100}%)`;
-            slide.setAttribute('data-current-index', currentIndex);
-        }
+    slide.style.transform = `translateX(${-currentIndex * 100}%)`;
+    slide.setAttribute('data-current-index', currentIndex);
+}
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const carousels = document.querySelectorAll('.carousel-container');
-
-            carousels.forEach(carousel => {
-                const prevButton = carousel.querySelector('.prev');
-                const nextButton = carousel.querySelector('.next');
-                const carouselId = carousel.getAttribute('id');
-
-                prevButton.addEventListener('click', () => moveSlide(carouselId, -1));
-                nextButton.addEventListener('click', () => moveSlide(carouselId, 1));
-            });
-        });
 
         document.addEventListener('DOMContentLoaded', () => {
             let cartCount = 0;
@@ -156,5 +145,30 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector("#cart-table")) {
         renderCart();
     }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navLinksContainer = document.getElementById('nav-links-container');
+
+    hamburgerMenu.addEventListener('click', function() {
+        // Toggle la clase "show" para mostrar u ocultar el menú
+        if (navLinksContainer.classList.contains('show')) {
+            navLinksContainer.classList.remove('show');
+            navLinksContainer.classList.add('hidden');
+        } else {
+            navLinksContainer.classList.add('show');    	
+            navLinksContainer.classList.remove('hidden');
+        }
+    });
+
+ 
+    document.addEventListener('click', function(event) {
+        if (!navLinksContainer.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+            navLinksContainer.classList.remove('show');
+            navLinksContainer.classList.add('hidden');
+        }
+    });
 });
 
